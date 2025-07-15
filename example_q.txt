@@ -1,0 +1,22 @@
+Given monthly demands of 100, 150, 80, 130 units and a setup cost of $1000, unit cost $50, and holding cost $2 per unit per month, what is the optimal production plan and total cost?
+
+We have monthly demands of 120, 80, 200, 90 units.
+The production capacity each month is limited to 150 units.
+Setup cost $900, unit production cost $47, and holding cost $3 per unit per month.
+What is the optimal production plan, ending inventory each month, and total cost?
+
+“Over the next 12 months we expect demands of
+95, 120, 80, 140, 60, 110, 130, 70, 90, 150, 85, 100 units respectively.
+The fixed setup cost each time we start production is $1 200,
+unit production cost is $55, and inventory holding cost is $2.50 per unit per month.
+Assuming we start with zero inventory, what is the optimal production schedule, month-ending inventory, and total cost?”
+
+“Our plant faces monthly capacity limits.
+Demands for the next ten months are
+180, 140, 220, 160, 130, 250, 170, 190, 210, 150 units.
+Maximum we can produce each month is
+200, 180, 200, 190, 170, 260, 190, 200, 220, 180 units.
+Setup cost is $900 whenever we run the line,
+variable unit cost $48, and holding cost $3 per unit per month.
+We have 20 units of opening inventory.
+Please give the optimal production plan, month-by-month ending inventory, setup decisions, and total cost under these capacity constraints.
