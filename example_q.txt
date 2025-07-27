@@ -9,7 +9,7 @@ What is the optimal production plan, ending inventory each month, and total cost
 95, 120, 80, 140, 60, 110, 130, 70, 90, 150, 85, 100 units respectively.
 The fixed setup cost each time we start production is $1 200,
 unit production cost is $55, and inventory holding cost is $2.50 per unit per month.
-Assuming we start with zero inventory, what is the optimal production schedule, month-ending inventory, and total cost?”
+Assuming we start with zero inventory, what is the optimal production schedule, month-ending inventory, and total cost? (capacity is 200 each period)”
 
 “Our plant faces monthly capacity limits.
 Demands for the next ten months are

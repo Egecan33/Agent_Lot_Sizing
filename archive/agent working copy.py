@@ -1,6 +1,6 @@
 # agent.py
 from smolagents import CodeAgent, TransformersModel
-from tools.lot_sizing_tool import solve_lot_sizing, solve_lot_sizing_basic
+from tools.eptr_tool import solve_lot_sizing, solve_lot_sizing_basic
 
 # Choose and configure the language model for the agent:
 # Option 1: Use Anthropic Claude via official API (online).

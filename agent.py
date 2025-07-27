@@ -1,6 +1,5 @@
-# agent.py
 from smolagents import CodeAgent, TransformersModel
-from tools.lot_sizing_tool import solve_lot_sizing, solve_lot_sizing_basic
+from tools.eptr_tool import fetch_mcp
 
 # Choose and configure the language model for the agent:
 # Option 1: Use Anthropic Claude via official API (online).
@@ -17,28 +16,18 @@ model = TransformersModel(
     temperature=0.2,
 )
 
-# If you have internet/API access and want Claude or GPT-4:
-# model = OpenAIServerModel(model_id="anthropic/claude-2", api_base="https://api.anthropic.com/", api_key="YOUR_ANTHROPIC_KEY")
-# (The above would be if Anthropic provided an OpenAI-compatible endpoint, otherwise use anthropic's SDK.)
-# Or using OpenRouter (single key for many models):
-# model = OpenAIServerModel(model_id="openai/gpt-4", api_base="https://openrouter.ai/api/v1", api_key="YOUR_OPENROUTER_KEY")
-# (OpenRouter can route to various models including GPT-4 or Claude with the proper model_id.)
 
 # Initialize the agent with our tool
 agent = CodeAgent(
     model=model,
-    tools=[solve_lot_sizing, solve_lot_sizing_basic],
+    tools=[fetch_mcp],  # can use more tools
     max_steps=4,
+    additional_authorized_imports=[
+        "os"
+    ],  # Allows os for file checks if agent generates them (optional but prevents errors)
 )
 
 # Example query to the agent:
-question = (
-    "Given monthly demands of 100, 150, 80, 130 units and a setup cost of $1000, "
-    "unit cost $50, and holding cost $2 per unit per month, "
-    "what is the optimal production plan and total cost?"
-)
+question = "What is the market clearing price (PTF) for today?"
 response = agent.run(question)
 print("Agent answer:", response)
-
-
-# python agent.py

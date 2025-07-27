@@ -6,19 +6,12 @@ streamlit_app.py - Simplified ChatGPT-like interface
 import streamlit as st
 from smolagents import CodeAgent, TransformersModel
 from transformers import AutoTokenizer
-from tools.lot_sizing_tool import solve_lot_sizing, solve_lot_sizing_basic
-from tools.capacitated_lot_sizing_tool import (
-    solve_cap_lot_sizing,
-    solve_cap_lot_sizing_basic,
-)
+from tools.eptr_tool import solve_mcp
 
 
 MODEL_ID = "microsoft/Phi-3-mini-128k-instruct"
 all_tools = [
-    solve_lot_sizing,
-    solve_lot_sizing_basic,
-    solve_cap_lot_sizing,
-    solve_cap_lot_sizing_basic,
+    solve_mcp,
 ]
 
 
@@ -35,7 +28,7 @@ def load_agent():
     agent = CodeAgent(
         model=model,
         tools=all_tools,
-        max_steps=3,
+        max_steps=5,
     )
     return agent
 

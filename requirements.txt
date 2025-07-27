@@ -6,6 +6,7 @@ streamlit>=1.34.0                  # web UI
 llama-cpp-python>=0.2.61           # optional GGUF backend (CPU/Metal)
 transformers>=4.53.0
 accelerate>=1.8.0
+eptr2>=0.1.0                       # MCP solver wrapper  (replace with real version)
 # -----------------------------------------------------------------
 # DO NOT list gurobipy here – install it separately from pypi.gurobi.com# 0) be in the project root
 # rm -rf .venv                       # drop old env (optional but safer)
